@@ -7,6 +7,9 @@ table.AddPlayer('jane',1000)
 table.AddPlayer('dylan',1000)
 table.AddPlayer('john',1000)
 
+table.getEventEmitter().on('turn',function(stream){
+	console.log('New turn');
+});
 
 table.StartGame()
 
@@ -20,16 +23,9 @@ table.players[3].Call();
 table.players[0].Call();
 table.players[1].Bet(50);
 table.players[2].Bet(1);
-console.log( table.players[1] );
-console.log( table.players[2] );
 table.players[3].Call();
 table.players[0].Call();
 table.players[1].Call();
 table.players[2].Call();
 table.players[3].Call();
 table.players[0].Call();
-
-console.log(table.game);
-
-//table.initNewRound()
-
